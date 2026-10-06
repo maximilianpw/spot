@@ -4,34 +4,29 @@ Phase **Découverte** du [cycle de vie d'un projet web](../../../cours/cahier-de
 
 **Spot** : outil SaaS pour gérer un établissement et ses salles, et permettre aux personnes autorisées de les réserver. La V1 couvre un établissement de 15 salles ; la V2 visera plusieurs établissements.
 
-**Objectif :** vérifier auprès des futurs clients que la V1 répond à un vrai besoin, et récupérer les données et supports utiles au projet.
+> Projet pédagogique : le client et les entretiens sont **fictifs**, mais les chiffres de marché sont **réels et sourcés**.
 
 **Échéance :** 10/10 (livrable « Enquêtes clients » du [planning](../../../cours/cahier-des-charges/03-planning.pdf)). Les résultats alimentent le document de cadrage V1 et le modèle des rôles, prévus pour le 13/10.
 
-## Qui interroger
+## Le client fictif
 
-| Profil                                                                | Combien | Pourquoi                                            |
-| --------------------------------------------------------------------- | ------- | --------------------------------------------------- |
-| Gestionnaires de salles (école, coworking, entreprise)                | 3 à 5   | Ce sont les clients qui paieront l'abonnement       |
-| Réservateurs (personnes qui réservent des salles dans leur structure) | 2 à 3   | Ce sont les utilisateurs quotidiens de la recherche |
+**Pinède Workspace**, coworking de 110 membres et 15 salles à Sophia Antipolis. Il gère ses réservations avec Google Agenda et Excel. Un deuxième site est prévu à Nice en 2027.
 
-Varier les types d'établissements : les règles d'une école et d'un coworking sont très différentes.
+## Fichiers
 
-## Démarche
+| Fichier                                                | Contenu                                           |
+| ------------------------------------------------------ | ------------------------------------------------- |
+| [synthese.md](synthese.md)                             | **À lire en premier** : résultats de l'enquête    |
+| [entretiens/](entretiens/)                             | Comptes rendus des 4 entretiens                   |
+| [etude-de-marche.md](etude-de-marche.md)               | Chiffres réels et sources                         |
+| [guide-entretien-client.md](guide-entretien-client.md) | Questions posées pendant les entretiens           |
+| [supports-a-collecter.md](supports-a-collecter.md)     | Checklist des éléments à récupérer chez le client |
 
-1. **Préparer** : trouver les contacts, fixer les rendez-vous (30 à 45 min).
-2. **Interroger** avec le [guide d'entretien](guide-entretien-client.md). Une personne pose les questions, une autre prend des notes.
-3. **Récupérer les supports** avec la [checklist](supports-a-collecter.md).
-4. **Synthétiser** tous les entretiens dans la [synthèse](synthese.md) et la présenter à l'équipe.
+## Personnes interrogées
 
-## Points ouverts à éclairer
-
-Ces questions n'ont pas été tranchées en réunion. L'enquête doit apporter des réponses :
-
-| Point ouvert                                              | Questions du guide |
-| --------------------------------------------------------- | ------------------ |
-| Prix de l'abonnement et du pack photo                     | Thème 7            |
-| Règles différentes selon école, coworking, entreprise     | Thèmes 1 et 3      |
-| Droits d'un utilisateur membre de plusieurs organisations | Thème 3            |
-| Conformité, assurance et responsabilité des salles louées | Thème 8            |
-| Intérêt pour plusieurs établissements (V2)                | Thème 1            |
+| Personne       | Rôle                | Compte rendu                                                      |
+| -------------- | ------------------- | ----------------------------------------------------------------- |
+| Hélène Garnier | Gérante             | [01-gerante.md](entretiens/01-gerante.md)                         |
+| Karim Benali   | Responsable accueil | [02-responsable-accueil.md](entretiens/02-responsable-accueil.md) |
+| Julie Moreau   | Freelance, membre   | [03-freelance-membre.md](entretiens/03-freelance-membre.md)       |
+| Thomas Leroy   | Entreprise externe  | [04-entreprise-externe.md](entretiens/04-entreprise-externe.md)   |

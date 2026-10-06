@@ -74,13 +74,20 @@ Les thèmes suivent la méthode **QQOQCCP** du cours (Qui ? Quoi ? Où ? Quand ?
 - Avez-vous des contraintes sur les données personnelles (RGPD) ?
 - Pour quand auriez-vous besoin d'un tel outil ?
 
-## Réservateur
+### 9. Les services (Quoi ? Combien ?)
+
+- ★ Quels services aimeriez-vous proposer autour des réservations ? (café, repas, matériel)
+- Des tarifs réduits aux heures creuses vous aideraient-ils à remplir les salles ?
+- Faut-il prévenir l'accueil de l'arrivée des invités ?
+
+## Réservateur (membre ou entreprise externe)
 
 - ★ Comment réservez-vous une salle aujourd'hui ? Combien de temps cela prend-il ?
 - ★ Qu'est-ce qui vous agace le plus dans ce processus ?
-- ★ Sur quels critères choisissez-vous une salle ? (taille, équipements, proximité)
+- ★ Sur quels critères choisissez-vous une salle ? (taille, équipements, proximité, prix)
 - Réservez-vous plutôt depuis un ordinateur ou un téléphone ?
-- Une carte des salles disponibles autour de vous vous serait-elle utile ?
+- Aimeriez-vous ajouter des options à la réservation ? (café, repas, matériel)
+- Externe : comment trouvez-vous une salle ? Quel prix trouvez-vous normal ? Comment payez-vous ?
 
 ## Clôture
 
