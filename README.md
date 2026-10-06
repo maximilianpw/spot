@@ -1,94 +1,58 @@
-# Spot
+# SPOT
 
-One repository, two deployable applications. npm workspaces share a lockfile and standalone Vite, Vitest, Oxlint, and Oxfmt tooling; the frontend and backend have separate code, builds, and runtimes.
+SPOT est une application web de réservation de salles et d'espaces partagés pour les écoles, les entreprises et les espaces de coworking.
 
-## Structure
+L'objectif est simple : savoir quelles salles sont disponibles, réserver un créneau et éviter les doubles réservations, sans passer par des e-mails ou des tableurs.
 
-```text
-frontend/                 React Router + React + Tailwind (SPA)
-  app/                    UI, routes, and client-side data loading
-  public/                 Static files
-  Dockerfile              Static build served by Nginx
-  nginx.conf.template     SPA fallback and /api reverse proxy
-backend/                  Node.js + TypeScript API monolith
-  src/app.ts              HTTP API routing (GET /api/health)
-  src/server.ts           Runtime configuration and server lifecycle
-  Dockerfile              Compiled API on Node.js
-compose.yaml              Both services for local production testing
-vitest.config.ts          Shared test configuration
-.oxfmtrc.json              Shared formatting configuration
-.oxlintrc.json             Shared lint configuration
-package-lock.json         Shared npm dependency lockfile
-```
+## Fonctionnalités prévues
 
-Keep business logic and persistence in backend/ as the application grows. The frontend must not import backend implementation files or contain secrets. This is not a microservices setup: the backend is one application.
+- Consulter les salles disponibles, leur capacité et leurs équipements.
+- Réserver un créneau et retrouver ses réservations.
+- Annuler une réservation avant le début du créneau.
+- Permettre aux administrateurs de gérer les salles et les règles de réservation.
+- Empêcher deux réservations sur des créneaux qui se chevauchent pour une même salle.
 
-## Development
+Le projet vise d'abord un déploiement pilote dans une école. Les réservations récurrentes, les notifications et l'intégration avec des calendriers sont des évolutions possibles, hors du périmètre initial.
 
-Requires Node.js 24+ and npm 11+.
+## Équipe
+
+| Rôle           | Membres                             |
+| -------------- | ----------------------------------- |
+| Chef de projet | Maximilian PINDER-WHITE             |
+| Front-end      | Benoit Bremaud, Kevin Vitali        |
+| Back-end       | Clement Machtelinckx, Valentin SALA |
+
+Les équipes front-end et back-end définiront ensemble un contrat d'API commun pour développer et tester les deux parties en parallèle.
+
+## État du projet
+
+Le dépôt contient actuellement le socle technique : une interface React et une API Node.js avec une route de vérification de disponibilité (`/api/health`). Les fonctionnalités métier décrites ci-dessus restent à développer ; l'authentification et la base de données ne sont pas encore configurées.
+
+## Technologies
+
+- **Front-end :** React, React Router, TypeScript et Tailwind CSS.
+- **Back-end :** Node.js et TypeScript.
+- **Organisation :** un dépôt commun avec npm workspaces (`frontend/` et `backend/`).
+- **Tests et déploiement :** Vitest et Docker.
+
+## Lancer le projet
+
+Prérequis : **Node.js 24+** et **npm 11+**.
 
 ```bash
 npm ci
 npm run dev
 ```
 
-- Frontend: http://localhost:5173
-- Backend: http://localhost:3001/api/health
-- Proxied API: http://localhost:5173/api/health
+- Interface : http://localhost:5173
+- API : http://localhost:3001/api/health
 
-Run only one app with `npm run dev:frontend` or `npm run dev:backend`.
-The root `dev` script runs both workspaces concurrently and stops both when either exits. The `build` script builds both workspaces.
-Use `npm install` when changing dependencies and commit the updated `package-lock.json`.
-
-Frontend code should use relative requests such as `fetch("/api/health")` in React Router `clientLoader` / `clientAction` functions. Vite proxies /api to the backend in development and preview; Nginx does this in the supplied production image. Browser requests stay same-origin, so no permissive CORS configuration is needed.
-
-### Configuration
-
-| Variable    | Used by                       | Default                                                      |
-| ----------- | ----------------------------- | ------------------------------------------------------------ |
-| PORT        | Backend                       | 3001                                                         |
-| HOST        | Backend                       | 0.0.0.0                                                      |
-| BACKEND_URL | Frontend dev/preview or Nginx | http://127.0.0.1:3001 locally; http://backend:3001 in Docker |
-
-Set `FRONTEND_PORT` to override the frontend development port (default 5173) if it is already in use.
-
-Set variables in the process environment, for example:
+## Vérifier le projet
 
 ```bash
-PORT=4001 npm run dev:backend
-BACKEND_URL=http://127.0.0.1:4001 npm run dev:frontend
+npm run verify
+npm test
+npm run build
 ```
 
-BACKEND_URL must be an HTTP(S) origin with no path or trailing slash. It is server-side proxy configuration, not a browser-exposed secret. The backend does not automatically load .env files.
-
-## Verification and builds
-
-```bash
-npm run verify # Generate route types, typecheck both apps, format/lint checks
-npm test       # API tests through a real HTTP server
-npm run build  # frontend/build/client and backend/dist
-npm run format # Apply formatting fixes
-```
-
-After a build, run the API with `npm run start --workspace @spot/backend` and preview the frontend with `npm run preview --workspace @spot/frontend` (http://localhost:4173). Preview is for local verification, not production hosting.
-
-## Deployment
-
-Both Dockerfiles use the **repository root** as their build context:
-
-```bash
-docker build -f frontend/Dockerfile -t spot-frontend .
-docker build -f backend/Dockerfile -t spot-backend .
-# Or build and run both locally:
-docker compose up --build
-```
-
-Compose exposes the frontend at http://localhost:8080 and API at http://localhost:3001. Its frontend proxies /api to the backend over the internal Docker network.
-
-For separate hosting:
-
-- **Backend:** deploy the backend image (port 3001, configurable via PORT), or build and run backend/dist/server.js with Node 24+. The initial API uses only Node built-ins and needs no runtime dependencies. Health check: GET /api/health.
-- **Frontend:** deploy the frontend image (port 80) and set BACKEND_URL to the reachable backend origin. Alternatively, upload frontend/build/client to a static host; configure an /api/* reverse proxy to the backend **before** the SPA fallback to index.html.
-- Terminate HTTPS at your hosting platform / ingress. Do not expose secrets with VITE_ variables.
-
-The original template's runtime SSR is intentionally disabled: the UI is now independently hosted as a static SPA, while runtime server logic belongs in backend/. Do not add server loaders/actions to frontend routes; use clientLoader/clientAction to call the API instead. There is no application database or authentication configured yet.
+Les instructions détaillées de développement, de configuration et de déploiement sont disponibles dans [docs/development.md](docs/development.md).
