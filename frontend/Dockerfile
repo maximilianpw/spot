@@ -1,16 +1,15 @@
-FROM oven/bun:1.4.2 AS dependencies
+FROM node:24-alpine AS dependencies
 WORKDIR /app
-COPY package.json bun.lock ./
+COPY package.json package-lock.json ./
 COPY frontend/package.json frontend/package.json
 COPY backend/package.json backend/package.json
-RUN bun install --frozen-lockfile
+RUN npm ci
 
 FROM node:24-alpine AS build
 WORKDIR /app
 COPY --from=dependencies /app/ ./
 COPY frontend/ frontend/
-WORKDIR /app/frontend
-RUN ./node_modules/.bin/react-router build
+RUN npm run build --workspace @spot/frontend
 
 FROM nginx:stable-alpine
 ENV BACKEND_URL=http://backend:3001

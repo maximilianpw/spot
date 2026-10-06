@@ -1,15 +1,15 @@
-FROM oven/bun:1.4.2 AS dependencies
+FROM node:24-alpine AS dependencies
 WORKDIR /app
-COPY package.json bun.lock ./
+COPY package.json package-lock.json ./
 COPY frontend/package.json frontend/package.json
 COPY backend/package.json backend/package.json
-RUN bun install --frozen-lockfile
+RUN npm ci
 
 FROM node:24-alpine AS build
 WORKDIR /app
 COPY --from=dependencies /app/ ./
 COPY backend/ backend/
-RUN ./node_modules/.bin/tsc -p backend/tsconfig.build.json
+RUN npm run build --workspace @spot/backend
 
 FROM node:24-alpine
 WORKDIR /app

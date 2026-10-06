@@ -1,6 +1,6 @@
 # Spot
 
-One repository, two deployable applications. Bun workspaces share a lockfile and Vite+ tooling; the frontend and backend have separate code, builds, and runtimes.
+One repository, two deployable applications. npm workspaces share a lockfile and standalone Vite, Vitest, Oxlint, and Oxfmt tooling; the frontend and backend have separate code, builds, and runtimes.
 
 ## Structure
 
@@ -15,27 +15,30 @@ backend/                  Node.js + TypeScript API monolith
   src/server.ts           Runtime configuration and server lifecycle
   Dockerfile              Compiled API on Node.js
 compose.yaml              Both services for local production testing
-vite.config.ts            Shared formatting, linting, and tests
-bun.lock                  Shared dependency lockfile
+vitest.config.ts          Shared test configuration
+.oxfmtrc.json              Shared formatting configuration
+.oxlintrc.json             Shared lint configuration
+package-lock.json         Shared npm dependency lockfile
 ```
 
 Keep business logic and persistence in backend/ as the application grows. The frontend must not import backend implementation files or contain secrets. This is not a microservices setup: the backend is one application.
 
 ## Development
 
-Requires Node.js 24+, Bun 1.4.2, and the Vite+ CLI (`vp`).
+Requires Node.js 24+ and npm 11+.
 
 ```bash
-vp install
-vp run dev
+npm ci
+npm run dev
 ```
 
 - Frontend: http://localhost:5173
 - Backend: http://localhost:3001/api/health
 - Proxied API: http://localhost:5173/api/health
 
-Run only one app with `vp run dev:frontend` or `vp run dev:backend`.
-The root `dev` and `build` scripts orchestrate both workspaces: use **vp run dev** / **vp run build**, not the built-in `vp dev` / `vp build` commands at the repository root.
+Run only one app with `npm run dev:frontend` or `npm run dev:backend`.
+The root `dev` script runs both workspaces concurrently and stops both when either exits. The `build` script builds both workspaces.
+Use `npm install` when changing dependencies and commit the updated `package-lock.json`.
 
 Frontend code should use relative requests such as `fetch("/api/health")` in React Router `clientLoader` / `clientAction` functions. Vite proxies /api to the backend in development and preview; Nginx does this in the supplied production image. Browser requests stay same-origin, so no permissive CORS configuration is needed.
 
@@ -52,8 +55,8 @@ Set `FRONTEND_PORT` to override the frontend development port (default 5173) if 
 Set variables in the process environment, for example:
 
 ```bash
-PORT=4001 vp run dev:backend
-BACKEND_URL=http://127.0.0.1:4001 vp run dev:frontend
+PORT=4001 npm run dev:backend
+BACKEND_URL=http://127.0.0.1:4001 npm run dev:frontend
 ```
 
 BACKEND_URL must be an HTTP(S) origin with no path or trailing slash. It is server-side proxy configuration, not a browser-exposed secret. The backend does not automatically load .env files.
@@ -61,12 +64,13 @@ BACKEND_URL must be an HTTP(S) origin with no path or trailing slash. It is serv
 ## Verification and builds
 
 ```bash
-vp run verify   # Generate route types, typecheck both apps, format/lint checks
-vp test        # API tests through a real HTTP server
-vp run build   # frontend/build/client and backend/dist
+npm run verify # Generate route types, typecheck both apps, format/lint checks
+npm test       # API tests through a real HTTP server
+npm run build  # frontend/build/client and backend/dist
+npm run format # Apply formatting fixes
 ```
 
-After a build, run the API with `bun run --cwd backend start` and preview the frontend with `bun run --cwd frontend preview` (http://localhost:4173). Preview is for local verification, not production hosting.
+After a build, run the API with `npm run start --workspace @spot/backend` and preview the frontend with `npm run preview --workspace @spot/frontend` (http://localhost:4173). Preview is for local verification, not production hosting.
 
 ## Deployment
 

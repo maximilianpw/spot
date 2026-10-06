@@ -1,5 +1,5 @@
 {
-  "npm.scriptRunner": "vp",
+  "npm.scriptRunner": "npm",
   "editor.defaultFormatter": "oxc.oxc-vscode",
   "[javascript]": {
     "editor.defaultFormatter": "oxc.oxc-vscode"

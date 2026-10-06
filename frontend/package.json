@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "react-router dev",
     "build": "react-router build",
-    "preview": "vp preview --host 0.0.0.0",
+    "preview": "vite preview --host 0.0.0.0",
     "typecheck": "react-router typegen && tsc --noEmit"
   },
   "dependencies": {

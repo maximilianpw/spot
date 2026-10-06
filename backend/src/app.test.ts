@@ -1,5 +1,5 @@
 import { createServer } from "node:http";
-import { afterAll, beforeAll, describe, expect, it } from "vite-plus/test";
+import { afterAll, beforeAll, describe, expect, it } from "vitest";
 import { handleApiRequest } from "./app.ts";
 
 const server = createServer(handleApiRequest);
