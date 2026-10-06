@@ -1,0 +1,36 @@
+{
+  "name": "spot",
+  "private": true,
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
+  "type": "module",
+  "scripts": {
+    "dev": "bun run --parallel --filter \"@spot/*\" dev",
+    "dev:frontend": "bun run --cwd frontend dev",
+    "dev:backend": "bun run --cwd backend dev",
+    "build": "bun run --filter \"@spot/*\" build",
+    "typecheck": "bun run --filter \"@spot/*\" typecheck",
+    "verify": "bun run typecheck && vp check"
+  },
+  "devDependencies": {
+    "@types/node": "^22",
+    "typescript": "^5.9.3",
+    "vite": "npm:@voidzero-dev/vite-plus-core@1.0.0",
+    "vite-plus": "1.0.0"
+  },
+  "overrides": {
+    "vite": "npm:@voidzero-dev/vite-plus-core@1.0.0"
+  },
+  "devEngines": {
+    "packageManager": {
+      "name": "bun",
+      "version": "1.4.2",
+      "onFail": "download"
+    }
+  },
+  "engines": {
+    "node": ">=24"
+  }
+}
