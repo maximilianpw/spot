@@ -13,3 +13,7 @@ coverage/
 
 # Logs
 *.log
+
+
+
+.idea/
