@@ -1,85 +1,83 @@
 # Synthèse de la collecte d'information
 
-- **Date de l'entretien :**
-- **Client et interlocuteurs :**
-- **Équipe présente :**
-- **Validée par le client le :**
+## Entretiens réalisés
 
-## 1. Le projet en bref
+| Date | Personne (rôle) | Type d'établissement | Nombre de salles |
+| ---- | --------------- | -------------------- | ---------------- |
+|      |                 |                      |                  |
 
-- **Fonction principale (une phrase) :**
-- **Contexte et problème à résoudre :**
-- **Existant :**
+## 1. Gestion actuelle et problèmes
 
-## 2. Objectifs
+| Problème constaté | Cité par (nombre d'entretiens) |
+| ----------------- | ------------------------------ |
+|                   |                                |
+
+**Outils utilisés aujourd'hui :**
+
+## 2. Rôles et règles de réservation
+
+→ Entrée pour le modèle des rôles et autorisations
+
+| Rôle | Peut réserver | Restrictions |
+| ---- | ------------- | ------------ |
+|      |               |              |
+
+**Différences entre école, coworking et entreprise :**
+
+**Utilisateurs membres de plusieurs organisations :**
+
+## 3. Informations attendues sur une salle
+
+→ Entrée pour le schéma de données des salles
+
+- …
+
+## 4. Fonctionnalités demandées
+
+→ [Fiche Besoins](../../../cours/cahier-des-charges/07-besoins-techniques.pdf) : classer en MoSCoW
+
+| Fonctionnalité | MoSCoW | Citée par |
+| -------------- | ------ | --------- |
+|                | Must   |           |
+|                | Should |           |
+|                | Could  |           |
+|                | Won't  |           |
+
+## 5. Objectifs et critères de succès
 
 → [Fiche Objectifs](../../../cours/cahier-des-charges/04-objectifs.pdf)
 
-| Objectif   | Critère de succès | Priorité (Must / Should / Could) |
-| ---------- | ----------------- | -------------------------------- |
-| Objectif 1 |                   |                                  |
-| Objectif 2 |                   |                                  |
-| Objectif 3 |                   |                                  |
+| Objectif | Critère de succès |
+| -------- | ----------------- |
+|          |                   |
 
-## 3. Cibles
+## 6. Modèle économique
 
-→ [Fiche Cibles](../../../cours/cahier-des-charges/05-cibles.pdf)
+- **Prix d'abonnement acceptable :**
+- **Facturation préférée (par établissement, par salle) :**
+- **Intérêt pour le pack photo, et à quel prix :**
 
-| Profil   | Description | Appareil | Besoin principal |
-| -------- | ----------- | -------- | ---------------- |
-| Profil 1 |             |          |                  |
-| Profil 2 |             |          |                  |
+## 7. Contraintes
 
-## 4. Fonctionnalités
+- **Appareils :**
+- **Outils à connecter :**
+- **Location à des extérieurs (assurance, responsabilité) :**
+- **Données personnelles :**
 
-→ [Fiche Besoins](../../../cours/cahier-des-charges/07-besoins-techniques.pdf)
+## 8. Réponses aux points ouverts
 
-| Fonctionnalité | MoSCoW | Remarque |
-| -------------- | ------ | -------- |
-|                | Must   |          |
-|                | Should |          |
-|                | Could  |          |
-|                | Won't  |          |
+| Point ouvert                               | Ce que l'enquête montre |
+| ------------------------------------------ | ----------------------- |
+| Prix de l'abonnement et du pack photo      |                         |
+| Règles selon école, coworking, entreprise  |                         |
+| Droits multi-organisation                  |                         |
+| Conformité, assurance, responsabilité      |                         |
+| Intérêt pour plusieurs établissements (V2) |                         |
 
-## 5. Contenus et identité visuelle
+## 9. Citations marquantes
 
-- **Charte graphique :** oui / non
-- **Contenus fournis par :**
-- **Sites de référence :**
-- **Langues et ton :**
+> « … » (rôle, type d'établissement)
 
-## 6. Contraintes techniques
+## 10. Recommandations pour le cadrage V1
 
-- **Appareils et navigateurs :**
-- **Outils ou API à connecter :**
-- **Hébergement :**
-- **Données personnelles (RGPD) :**
-- **Maintenance :**
-
-## 7. Délais et budget
-
-→ [Fiche Planning](../../../cours/cahier-des-charges/03-planning.pdf)
-
-- **Date de lancement souhaitée :**
-- **Dates clés :**
-- **Budget :**
-
-## 8. Acteurs
-
-→ [Fiche Acteurs](../../../cours/cahier-des-charges/06-acteurs.pdf)
-
-| Rôle                    | Nom | Contact |
-| ----------------------- | --- | ------- |
-| Commanditaire (MOA)     |     |         |
-| Interlocuteur quotidien |     |         |
-| Utilisateurs clés       |     |         |
-
-## 9. Points ouverts
-
-| Question | Qui répond | Pour quand |
-| -------- | ---------- | ---------- |
-|          |            |            |
-
-## 10. Supports restant à recevoir
-
-Voir la [checklist des supports](supports-a-collecter.md).
+- …

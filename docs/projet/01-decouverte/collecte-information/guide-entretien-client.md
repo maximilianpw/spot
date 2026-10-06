@@ -1,95 +1,89 @@
 # Guide d'entretien client
 
 - **Date :**
-- **Client présent :**
+- **Personne interrogée (nom, rôle) :**
+- **Établissement :**
 - **Équipe présente :**
 
-Durée : 45 min à 1 h. Les questions marquées ★ sont prioritaires si le temps manque.
+Durée : 30 à 45 min. Les questions marquées ★ sont prioritaires si le temps manque.
 
-Les thèmes suivent la méthode **QQOQCCP** du cours (Qui ? Quoi ? Où ? Quand ? Comment ? Combien ? Pourquoi ?). Chaque thème alimente une partie du cahier des charges.
+Les thèmes suivent la méthode **QQOQCCP** du cours (Qui ? Quoi ? Où ? Quand ? Comment ? Combien ? Pourquoi ?).
 
-## 1. Le projet et son contexte (Pourquoi ? Quoi ?)
+> Ne pas présenter Spot au début : faire d'abord parler la personne de sa situation actuelle, pour ne pas influencer ses réponses.
 
-→ Cahier des charges : présentation générale du projet
+## Gestionnaire de salles
 
-- ★ Présentez-vous : votre structure, votre activité, votre rôle.
-- ★ D'où vient le projet ? Quel problème doit-il résoudre ?
-- ★ En une phrase, à quoi doit servir Spot ?
-- Existe-t-il déjà un site ou une application ? Qu'est-ce qui fonctionne, qu'est-ce qui ne fonctionne pas ?
-- Que se passe-t-il si le projet n'est pas réalisé ?
+### 1. L'établissement (Qui ? Où ?)
 
-## 2. Les objectifs (Pour quoi faire ?)
+- ★ Quel type d'établissement : école, coworking, entreprise, autre ?
+- ★ Combien de salles ? De quels types (réunion, cours, amphithéâtre, bureau) ?
+- Sur un seul site ou plusieurs ? Dans quelles villes ?
+- Louez-vous des salles à des personnes extérieures ?
 
-→ [Fiche Objectifs](../../../cours/cahier-des-charges/04-objectifs.pdf)
+### 2. La gestion actuelle (Comment ?)
 
-- ★ Quels sont vos 3 objectifs principaux ?
-- ★ Comment saurez-vous que le projet est réussi ? Un chiffre par objectif si possible (utilisateurs, inscriptions, temps gagné…).
-- Quelle image le visiteur doit-il avoir de vous ?
-- Que doit-il se dire en quittant le site ?
-- Quel lien voulez-vous garder avec lui ? (formulaire, e-mail, compte, notifications…)
+- ★ Comment gérez-vous les réservations aujourd'hui ? (Excel, agenda partagé, logiciel, papier)
+- ★ Quels problèmes rencontrez-vous ? (doubles réservations, salles vides, réservations non honorées…)
+- Combien de temps y passez-vous par semaine ?
+- Qu'est-ce qui fonctionne bien et qu'il faut garder ?
 
-## 3. Les utilisateurs (Qui ?)
-
-→ [Fiche Cibles](../../../cours/cahier-des-charges/05-cibles.pdf)
-
-- ★ Qui va utiliser Spot ? Y a-t-il plusieurs types d'utilisateurs ?
-- ★ Pour chaque type : âge, métier, aisance avec le numérique, appareil utilisé (ordinateur, mobile).
-- Certains utilisateurs ont-ils des besoins d'accessibilité (handicap visuel, moteur…) ?
-- Comment vont-ils découvrir Spot ?
-- Pourquoi l'utiliseraient-ils plutôt qu'une autre solution ? Pourquoi reviendraient-ils ?
-- Pouvez-vous nous mettre en contact avec 2 ou 3 futurs utilisateurs ?
-
-## 4. Les fonctionnalités (Quoi ? Comment ?)
-
-→ [Fiche Besoins](../../../cours/cahier-des-charges/07-besoins-techniques.pdf) : tableau fonctionnel
-
-- ★ Quelles fonctionnalités sont indispensables dès la première version ?
-- Lesquelles seraient un plus ?
-- Qu'est-ce qui est hors sujet pour l'instant ?
-- Faut-il des espaces réservés (compte utilisateur, administration) ? Qui gère les contenus au quotidien ?
-
-Après l'entretien, classer chaque fonctionnalité en **MoSCoW** : Must, Should, Could, Won't.
-
-## 5. Contenus et identité visuelle (Quoi ?)
-
-→ Cahier des charges : politique éditoriale, orientations graphiques
-
-- ★ Avez-vous une charte graphique, un logo, des couleurs, des polices ?
-- Qui fournit les textes, images et vidéos ? Sont-ils déjà prêts ?
-- Quels sites aimez-vous, ou n'aimez-vous pas ? Pourquoi ?
-- En quelles langues ?
-- Quel ton : sérieux, convivial, institutionnel… ?
-
-## 6. Contraintes techniques (Où ? Comment ?)
-
-→ [Fiche Besoins](../../../cours/cahier-des-charges/07-besoins-techniques.pdf) : contraintes techniques
-
-- ★ Sur quels appareils et navigateurs Spot doit-il fonctionner ?
-- Faut-il connecter des outils ou des API existants ? (paiement, carte, agenda, CRM…)
-- Où les données doivent-elles être hébergées ?
-- Quelles données personnelles seront collectées ? (RGPD)
-- Avez-vous des exigences de sécurité ou de performance ?
-- Qui assurera la maintenance après la livraison ?
-
-## 7. Délais et budget (Quand ? Combien ?)
-
-→ [Fiche Planning](../../../cours/cahier-des-charges/03-planning.pdf)
-
-- ★ Quelle date de lancement souhaitez-vous ? Est-elle impérative ? Pourquoi ?
-- Y a-t-il des dates clés intermédiaires (événement, présentation…) ?
-- Quel budget est prévu ? Comprend-il l'hébergement et la maintenance ?
-
-## 8. Acteurs et organisation (Qui ?)
+### 3. Les rôles et les règles (Qui ?)
 
 → [Fiche Acteurs](../../../cours/cahier-des-charges/06-acteurs.pdf)
 
-- ★ Qui décide et valide de votre côté ? (commanditaire, MOA)
-- Qui sera notre interlocuteur au quotidien ?
-- Qui d'autre faut-il consulter ? (utilisateurs clés, financeurs…)
-- À quelle fréquence voulez-vous faire un point, et par quel canal ?
+- ★ Qui a le droit de réserver ? Qui ne l'a pas ? (élèves, visiteurs…)
+- ★ Certaines salles sont-elles réservées à certains rôles ? (grandes salles, salles équipées)
+- Une réservation doit-elle être validée par quelqu'un ?
+- Y a-t-il des priorités entre personnes ou entre services ?
+- Certaines personnes dépendent-elles de plusieurs organisations ? Comment gérez-vous leurs droits ?
+
+### 4. Les salles (Quoi ?)
+
+- ★ Quelles informations sur une salle sont indispensables ? (capacité, équipements, accessibilité, photos…)
+- Avez-vous des photos de vos salles ? Pourriez-vous en prendre 3 par salle ?
+- Qui mettrait à jour ces informations ?
+
+### 5. Le planning (Quand ? Comment ?)
+
+- ★ Quelle vue vous serait la plus utile : par salle, par jour, par semaine ?
+- Faut-il des réservations récurrentes (tous les lundis…) ?
+- Qui doit être prévenu d'une réservation ou d'une annulation ?
+
+### 6. Les objectifs (Pourquoi ?)
+
+→ [Fiche Objectifs](../../../cours/cahier-des-charges/04-objectifs.pdf)
+
+- ★ Si un outil réglait vos problèmes, qu'est-ce qui changerait pour vous ?
+- ★ Quelles sont les 3 fonctionnalités indispensables ?
+- Comment mesureriez-vous la réussite ? (temps gagné, taux d'occupation, moins de conflits…)
+
+### 7. Le modèle économique (Combien ?)
+
+- ★ Payez-vous déjà un outil pour cela ? Combien ?
+- ★ Quel prix d'abonnement vous semblerait acceptable ? Par mois, par établissement ou par salle ?
+- Un service de photos professionnelles de vos salles vous intéresserait-il ? À quel prix ?
+- Qui décide de l'achat dans votre structure ?
+
+### 8. Les contraintes (Où ? Quand ?)
+
+→ [Fiche Besoins](../../../cours/cahier-des-charges/07-besoins-techniques.pdf)
+
+- ★ Sur quels appareils l'outil serait-il utilisé ? (ordinateur, téléphone)
+- Faut-il le connecter à d'autres outils ? (Google Agenda, Outlook, connexion unique de l'établissement)
+- Si vous louez à des extérieurs : quelles règles d'assurance, de sécurité ou de responsabilité ?
+- Avez-vous des contraintes sur les données personnelles (RGPD) ?
+- Pour quand auriez-vous besoin d'un tel outil ?
+
+## Réservateur
+
+- ★ Comment réservez-vous une salle aujourd'hui ? Combien de temps cela prend-il ?
+- ★ Qu'est-ce qui vous agace le plus dans ce processus ?
+- ★ Sur quels critères choisissez-vous une salle ? (taille, équipements, proximité)
+- Réservez-vous plutôt depuis un ordinateur ou un téléphone ?
+- Une carte des salles disponibles autour de vous vous serait-elle utile ?
 
 ## Clôture
 
 - Reformuler en 3 phrases ce qui a été compris et le faire valider.
-- Passer la [checklist des supports](supports-a-collecter.md) : qui envoie quoi, pour quand.
-- Annoncer la suite : synthèse envoyée sous 48 h pour validation.
+- Demander les supports de la [checklist](supports-a-collecter.md) et une date d'envoi.
+- Demander si la personne accepte de tester une première version.
