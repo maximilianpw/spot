@@ -2,10 +2,13 @@ import { createServer } from "node:http";
 import { handleApiRequest } from "./app.ts";
 
 const port = Number(process.env.PORT ?? "3001");
+
 if (!Number.isInteger(port) || port < 1 || port > 65535) {
   throw new Error("Invalid PORT: expected an integer from 1 to 65535");
 }
+
 const host = process.env.HOST ?? "0.0.0.0";
+
 const server = createServer(handleApiRequest);
 
 server.listen(port, host, () => {
@@ -21,4 +24,5 @@ function shutdown() {
 }
 
 process.once("SIGTERM", shutdown);
+
 process.once("SIGINT", shutdown);

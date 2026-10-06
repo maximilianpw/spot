@@ -20,10 +20,11 @@
     "verify": "npm run typecheck && npm run check"
   },
   "devDependencies": {
+    "@oxlint/plugins": "1.87.0",
     "@types/node": "^22",
     "concurrently": "^10.0.5",
     "oxfmt": "^0.72.0",
-    "oxlint": "^1.87.0",
+    "oxlint": "1.87.0",
     "oxlint-tsgolint": "^7.0.2003",
     "typescript": "^5.9.3",
     "vite": "^8.3.3",

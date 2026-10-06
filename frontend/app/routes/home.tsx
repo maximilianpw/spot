@@ -7,6 +7,7 @@ export function meta() {
 export async function clientLoader() {
   try {
     const response = await fetch("/api/health");
+
     return { apiStatus: response.ok ? "online" : "offline" };
   } catch {
     return { apiStatus: "offline" };

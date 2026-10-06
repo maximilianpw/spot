@@ -3,6 +3,7 @@ import { afterAll, beforeAll, describe, expect, it } from "vitest";
 import { handleApiRequest } from "./app.ts";
 
 const server = createServer(handleApiRequest);
+
 let baseUrl: string;
 
 beforeAll(async () => {
@@ -11,6 +12,7 @@ beforeAll(async () => {
     server.listen(0, "127.0.0.1", resolve);
   });
   const address = server.address();
+
   if (!address || typeof address === "string") throw new Error("Expected a TCP server address");
   baseUrl = `http://127.0.0.1:${address.port}`;
 });

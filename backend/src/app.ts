@@ -9,10 +9,13 @@ export function handleApiRequest(request: IncomingMessage, response: ServerRespo
     if (request.method !== "GET" && request.method !== "HEAD") {
       response.writeHead(405, { Allow: "GET, HEAD" });
       response.end(JSON.stringify({ error: "Method not allowed" }));
+
       return;
     }
+
     response.writeHead(200);
     response.end(JSON.stringify({ status: "ok" }));
+
     return;
   }
 
